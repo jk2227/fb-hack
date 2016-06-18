@@ -10,6 +10,7 @@ auth = Oauth1Authenticator(
 
 client = Client(auth)
 
+# used to display default recommended restaurants in the city
 def searchByLocation(city):
 	params = {
 		'term': 'food'
@@ -20,9 +21,39 @@ def searchByLocation(city):
 	for b in bs:
 		print b.name
 
+# used to display recommended restaurants based on the 
+# customer's search
+def searchByKeywords(city, keywords):
+
+	params = {
+		'term': keywords
+	}
+
+	response = client.search(city, **params)
+	bs = response.businesses
+	for b in bs:
+		print b.name
+		# print b.rating
+		# print b.rating_img_url
+		# print b.location
+		# print b.phone
+
+def searchByLocation(latitude, longitude):
+
+	params = {
+		'term': 'restaurants',
+		'radius_filter': 2000
+	}
+
+	response = client.search_by_coordinates(latitude, longitude, **params)
+	bs = response.businesses
+	for b in bs:
+		print b.name
 
 def main():
-	searchByLocation('Seattle')
+	# searchByLocation('Seattle')
+	# searchByKeywords('Seattle', 'japanese food')
+	searchByLocation(47.6205,-122.3493)
 
 if __name__ == "__main__":
 	main()
