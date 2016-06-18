@@ -16,10 +16,11 @@
             <div id="top">
             </div><!-- End top div -->
             
-            <div id="main">       
-                <div id="content">
-                    <p>Placeholder: Auto-Generated Itinerary</p>
-                </div><!-- End content div -->
+            <div id="main">  
+            <form method = "POST" action="backend/main.py/getMonth">
+                <button>enter</button>
+            </form>     
+            <
  
             </div><!-- end main div -->
             <div id="bottom">
