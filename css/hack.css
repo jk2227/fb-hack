@@ -67,6 +67,17 @@ body {
     font-size: 5em;
 }
 
+.right{
+    float: right;
+    width: 40%;
+} 
+
+.left{
+
+    float: left;
+    width: 40% ;
+}
+
 /*-----------bottom---------------*/
 
 #bottom {
