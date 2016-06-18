@@ -7,23 +7,34 @@
 		<link rel="stylesheet" type="text/css" href="css/hack.css">
 		<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <?php include "php/php_component.php";?>
         
     </head>
     
     <body>
         <div id="frame">
-            <div id="main">
+            <div id="home_main">
                 <div id="image">
                     <form method="POST">
                         <div id="searchbox">
                             <div id="destination">
-                                <input class="destination_input" type="text" name="destination" placeholder="Where Are You Going?" >
+                                <input class="destination_input" type="text" name="destination" placeholder="Where are you going?" >
                             </div>
-                            <div id="date">
+                            <div class="date">
                                 <label for="startdate">Start Date:</label>
                                 <input class="inputbox" type="date" name="startdate">
+                                <label for="starttime"> Start Time:</label>
+                                <select name="starttime">
+                                    <?php get_time_options(); ?>
+                                </select>
+                            </div>
+                            <div class="date">
                                 <label for="enddate">End Date:</label>
                                 <input class="inputbox" type="date" name="enddate">
+                                <label for="endtime">End Time:</label>
+                                <select name="endtime">
+                                    <?php get_time_options(); ?>
+                                </select>
                             </div>
                             <div id="submit">
                                 <input type="submit" name="submit" value="GO"/>
@@ -34,6 +45,9 @@
                         $destination = trim(filter_input(INPUT_POST, 'destination', FILTER_SANITIZE_STRING));
                         $startdate = trim(filter_input(INPUT_POST, 'startdate', FILTER_SANITIZE_STRING));
                         $enddate = trim(filter_input(INPUT_POST, 'enddate', FILTER_SANITIZE_STRING));
+                        $starttime = $_POST['starttime'];
+                        $endtime = $_POST['endtime'];
+                        
                         
                         //form validation
                         $validate = true;
@@ -64,10 +78,12 @@
                             $_SESSION["destination"] = $destination;
                             $_SESSION["startdate"] = $startdate;
                             $_SESSION["enddate"] = $enddate;
+                            $_SESSION["starttime"] = $starttime;
+                            $_SESSION["endtime"] = $endtime;
                             
                             echo'
                             <script type="text/javascript">
-                                window.location = "sightseeing.php";
+                                window.location = "eatery.php";
                             </script>';
                         }
                         

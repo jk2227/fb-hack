@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <html>
     <head>
         <meta charset="utf-8">
@@ -17,11 +18,15 @@
             </div><!-- End top div -->
             
             <div id="main">  
-            <form method = "POST" action="backend/main.py/getMonth">
-                <button>enter</button>
+            <form method = "POST">
+                <input type = "submit" name = "enter" value = "enter">
             </form>     
-            <
- 
+            <?php
+
+            if (isset($_POST["enter"])){
+                echo $_SESSION["places"];
+            }
+            ?>
             </div><!-- end main div -->
             <div id="bottom">
                 <p>&copy; 2016 by Utinerary</p>
