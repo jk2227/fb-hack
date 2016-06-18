@@ -32,14 +32,14 @@
 
                     $morning = array("9:45AM","9:45AM", "10:15AM", "10:00AM", "9:15AM");
                     $noon = array("11:30AM","11:30AM", "12:00AM", "11:45AM", "12:15AM");
-                    $afternoon = array("2:00pm","2:00pm", "1:30pm", "2:30pm", "3:00pm");
-                    $evening = array("6:15pm", "6:15pm", "7:00pm", "6:00pm", "7:15pm");
+                    $afternoon = array("2:00PM","2:00PM", "1:30PM", "2:30PM", "3:00PM");
+                    $evening = array("6:15PM", "6:15PM", "7:00PM", "6:00PM", "7:15PM");
                     
                     $json = json_decode ($lines[0]);
                     $count = 1;
                     foreach ($json as $day){
                         
-                        echo "<tr><td>DAY ".$count."</td><td></td></tr>";
+                        echo "<tr><td><h3>DAY ".$count."</h3></td><td></td></tr>";
                         echo "<tr><td>".$morning[$count]."</td><td>".$day->p1."</td></tr>";
                         echo "<tr><td>".$noon[$count]."</td><td>Lunch at ".$day->lunch."</td></tr>";
                         echo "<tr><td>".$afternoon[$count]."</td><td>".$day->p2."</td></tr>";
@@ -52,7 +52,7 @@
                         echo "<tr><td></td><td></td></tr>";
                         echo "<tr><td></td><td></td></tr>";
                         echo "<tr><td></td><td></td></tr>";
-                        
+
                         $count ++;
                     }
 

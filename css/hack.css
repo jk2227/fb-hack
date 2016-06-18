@@ -216,6 +216,10 @@ input.button:hover {
     border: thin black;
 }
 
+h3{
+    font-weight: 800;
+}
+
 table{
     width: 100%;
     padding-top: 5%;
