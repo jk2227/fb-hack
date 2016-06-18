@@ -6,7 +6,7 @@
         <!-- stylesheets -->
 		<link rel="stylesheet" type="text/css" href="css/hack.css">
 		<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-        <?php include "php/php_component.php";?>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
         
     </head>
     
@@ -29,7 +29,6 @@
                                 <input class="button" type="submit" name="submit" value="GO"/>
                             </div>
                         </div><!-- End searchbox div -->
-                    </form>
                 <?php 
                     if (isset($_POST['submit'])){
                         $destination = trim(filter_input(INPUT_POST, 'destination', FILTER_SANITIZE_STRING));
@@ -65,10 +64,16 @@
                             $_SESSION["destination"] = $destination;
                             $_SESSION["startdate"] = $startdate;
                             $_SESSION["enddate"] = $enddate;
+                            
+                            echo'
+                            <script type="text/javascript">
+                                window.location = "sightseeing.php";
+                            </script>';
                         }
                         
                     }
                 ?>
+                </form>
                 </div><!-- End image div -->
             </div><!-- end main div -->
             <div id="bottom">
