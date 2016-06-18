@@ -5,19 +5,13 @@
         <!-- stylesheets -->
 		<link rel="stylesheet" type="text/css" href="css/hack.css">
 		<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-        <?php include "component/php_component.php";?>
+        <?php include "php/php_component.php";?>
         
     </head>
     
     <body>
         <div id="frame">
             <div id="top">
-                <!-- navigation -->
-                <div id="nav">
-                    <ul>
-<?php get_nav();?>
-                    </ul>
-                </div><!-- end nav  div -->
             </div><!-- End top div -->
             
             <div id="main">
