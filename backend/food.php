@@ -1,4 +1,4 @@
-#!/usr/bin/php
+<!--#!/usr/bin/php -->
 <?php
 
 // Enter the path that the oauth library is in relation to the php file

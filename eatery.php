@@ -30,12 +30,12 @@
                         <?php query_api("", "Seattle"); ?>
                         
                     </div>
-                    <div id="clearboth"></div>
                 </div> <!-- end category div -->
                 <div id = "cart" class = "right">
                     <h3>CART</h3>
                 </div>
             </div><!-- end main div -->
+            <div id="clearboth"></div>
             <div id="bottom">
                 <p>&copy; 2016 by Utinerary</p>
             </div>

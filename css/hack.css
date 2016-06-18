@@ -17,6 +17,7 @@ body {
     min-height: 680px;
     margin: 0px;
     text-align: center;
+
 }
 
 /*-------navigation-------*/
@@ -85,6 +86,7 @@ body {
     width: 80%;
     float:left;
     height: auto;
+    padding-bottom: 5%;
     /*position: fixed;*/
 }
 
