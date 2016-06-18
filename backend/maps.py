@@ -26,6 +26,8 @@ class GoogleMapper:
           return None
       else:
           latlong = result['results'][0]['geometry']['location']
+          if place == self.startLocation:
+            self.startLocation = result['results'][0]['name']
           return (result['results'][0]['name'], (latlong['lat'], latlong['lng']))
 
   def generateMatrix(self):

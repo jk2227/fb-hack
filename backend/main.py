@@ -9,10 +9,10 @@
 # print json.dumps({"key": form.getValue("data")})
 import calendar 
 import numpy as np
-from mod_python import apache 
 from collections import deque
-import maps
+from maps import GoogleMapper
 import copy
+import operator
 
 def getMonth(req,month): 
 	req.write(calendar.month(2005, int(month),2,3))
@@ -79,6 +79,7 @@ def createItinerary(start_loc, start_date, end_date, start_time, end_time, matri
 			# day['lunch'] = 
 			# day['p2'] = 
 			# day['dinner'] = 
+			print ''
 		else:
 			day['p1'] = sortedPlaces.popleft()
 			day['lunch'] = getMatchedRestaurant(day['p1'])
@@ -92,45 +93,47 @@ def createItinerary(start_loc, start_date, end_date, start_time, end_time, matri
 
 # matches restaurant with places using G-S 
 def matchRestaurantsWithPlaces(restaurants, etc, matrix):
-    unmatchedRestaurants = copy.deepcopy(restaurants)
-    unmatchedEtcs = copy.deepcopy(etc)
-    pairs = {}
-    
-    while len(unmatchedRestaurants) > 0 and len(unmatchedEtcs) > 0:
-        unmatchedRestaurant = unmatchedRestaurants[0]
-        unmatchedRestaurants = unmatchedRestaurants[1:]
-        preference = matrix[unmatchedRestaurant]
-        preference = sorted(preference.items(), key=operator.itemgetter(1))
-        while len(preference) > 0: 
-            pref = preference[0]
-            preference = preference[1:]
-            if pref[0] in restaurants:
-                continue 
-            if pref[0] not in pairs:
-                pairs[pref[0]] = unmatchedRestaurant
-                unmatchedEtcs.remove(pref[0])
-            else if pref[0] in pairs and matrix[pref[0]][pair[pref[0]] > matrix[pref[0]][unmatchedRestaurant]:
-                unmatchedRestaurants.push(pairs[pref[0]])                
-                pairs[pref[0]] = unmatchedRestaurant
-    
-    if len(unmatchedEtcs) > 0: 
-        for unmatchedEtc in unmatchedEtcs:
-            # find closest restaurant and do pairs[restaurant] = unmatchedEtc 
-            # if conflict then put closer one in pairs and put the other one in unmatched Etcs 
-    
-    return pairs
-        
+	unmatchedRestaurants = copy.deepcopy(restaurants)
+	unmatchedEtcs = copy.deepcopy(etc)
+	pairs = {}
+	
+	while len(unmatchedRestaurants) > 0 and len(unmatchedEtcs) > 0:
+		unmatchedRestaurant = unmatchedRestaurants[0]
+		unmatchedRestaurants = unmatchedRestaurants[1:]
+		preference = matrix[unmatchedRestaurant]
+		preference = sorted(preference.items(), key=operator.itemgetter(1))
+		while len(preference) > 0: 
+			pref = preference[0]
+			preference = preference[1:]
+			if pref[0] in restaurants:
+				continue 
+			if pref[0] not in pairs:
+				pairs[pref[0]] = unmatchedRestaurant
+				unmatchedEtcs.remove(pref[0])
+			elif (pref[0] in pairs):
+				if (matrix[pref[0]][pair[pref[0]]] > matrix[pref[0]][unmatchedRestaurant]):
+					unmatchedRestaurants.push(pairs[pref[0]])                
+					pairs[pref[0]] = unmatchedRestaurant
+	
+	if len(unmatchedEtcs) > 0: 
+		for unmatchedEtc in unmatchedEtcs:
+			# find closest restaurant and do pairs[restaurant] = unmatchedEtc 
+			# if conflict then put closer one in pairs and put the other one in unmatched Etcs 
+			print ''
+	
+	return pairs
+		
 
 def main():
 	g = GoogleMapper('../files/sample.json')
 	matrix = g.generateMatrix()
- 
-      locationNames = matrix[start].keys()
-      restaurants = g.restaurants
-      etc = locationNames - restaurants 
-      
-      
-	createItinerary()
+	print matrix
+
+	locationNames = matrix[g.startLocation].keys()
+	restaurants = g.restaurants
+	etc = [item for item in locationNames if item not in restaurants]
+
+	# createItinerary()
 
 if __name__ == "__main__":
 	main()
