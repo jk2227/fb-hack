@@ -21,6 +21,15 @@
             </div><!-- End top div -->
             
             <div id="main">
+                <h1>Find things to do:</h1>
+                <div id = "category" class = "left">
+                    Something else
+                </div>
+                
+                <div id = "cart" class = "right">
+                    <h2>Cart</h2>
+                </div>
+
                 <h2>What are places that you'd like to see?</h2>
                 <div id = "category" class = "left">
                 </div>
