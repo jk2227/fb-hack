@@ -7,6 +7,8 @@ class GoogleMapper:
       json_data = open(directory).read()
       json_loads = json.loads(json_data)
       self.places = json_loads['places']
+      restaurantObjects = filter(lambda x : x['type'] == 'food', json_loads['places'])
+      self.restaurants = [restaurant['name'] for restaurant in restaurantObjects]      
       self.startLocation = json_loads['startLocation']
       self.gmaps = googlemaps.Client(key='AIzaSyA59zGWOtyvYAUhwxmnjwF3GZQoxcvynF8')
       

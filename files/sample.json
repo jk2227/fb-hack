@@ -13,7 +13,11 @@
 			"name": "Microsoft",
 			"type": "sightseeing",
 			"duration": 2
+		},
+		{
+			"name": "Japonessa",
+			"type": "food",
+			"duration": 1.5
 		}
-	],
-	"food":[ 1, 4, 7, 8 ]
+	]
 }
