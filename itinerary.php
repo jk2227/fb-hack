@@ -1,7 +1,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Itinerary Generation</title>
+        <title>Utinerary</title>
         <!-- stylesheets -->
 		<link rel="stylesheet" type="text/css" href="css/hack.css">
 		<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
@@ -23,7 +23,7 @@
  
             </div><!-- end main div -->
             <div id="bottom">
-                <p>&copy; 2016 by Xin Lin, Yiting Wang, Ji hun Kim, Juhee Lee</p>
+                <p>&copy; 2016 by Utinerary</p>
             </div>
         </div><!-- end frame div -->
     </body>
