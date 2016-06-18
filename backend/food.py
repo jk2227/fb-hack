@@ -10,12 +10,12 @@ auth = Oauth1Authenticator(
 
 client = Client(auth)
 
-def searchByLocation(location):
+def searchByLocation(city):
 	params = {
 		'term': 'food'
 	}
 
-	response = client.search(location, **params)
+	response = client.search(city, **params)
 	bs = response.businesses
 	for b in bs:
 		print b.name
