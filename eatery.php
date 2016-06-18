@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <html>
     <head>
         <meta charset="utf-8">
@@ -22,13 +23,23 @@
                     <form method="POST">
                         <div id="search">
                             <div id="food">
-                                <input class="food_input" type="text" name="destination" placeholder="Type a category. e.g., Japanese" >
+                                <input class="food_input" type="text" name="food_input" placeholder="Type a category. e.g., Japanese" >
                                 <input class="button" type="submit" name="search" value="SEARCH"/>
                             </div>
                         </div>
                     </form>
                     <div id = "rec">
-                        <?php query_api("", "Seattle"); ?>
+                        <?php 
+                        if (isset($_SESSION["destination"] )) {
+                            $destination = $_SESSION["destination"];
+                        }
+                        if (isset($_POST['search'])) {
+                            $food_input = trim(filter_input(INPUT_POST, 'food_input', FILTER_SANITIZE_STRING));
+                        } else {
+                            $food_input = "";
+                        }
+                        query_api($food_input, $destination); 
+                        ?>
                         
                     </div>
                 </div> <!-- end category div -->

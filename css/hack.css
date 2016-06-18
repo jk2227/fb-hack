@@ -62,7 +62,7 @@ body {
 }
 
 
-#date input[type=date] {
+.date input[type=date] {
     width: 170px;
     height: 2em;
     
