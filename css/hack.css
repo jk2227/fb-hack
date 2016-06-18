@@ -49,7 +49,7 @@ body {
 #searchbox {
     margin: 0 auto;
     text-align: center;
-    padding-top: 12%;
+    padding-top: 8%;
     line-height: 40px;
     color: #FFFFFF;
 }
@@ -58,9 +58,18 @@ body {
     padding: 1.5%;
 }
 
+#stay {
+    padding: 1.5%;
+}
+
+#stay input[placeholder] {
+    font-size: 1.5em;
+}
+
 #destination input[placeholder] {
     font-size: 1.5em;
 }
+
 
 .destination_input {
     width: 500px;
@@ -144,6 +153,14 @@ input.button {
     text-align: center;
     text-decoration: none;
     cursor: pointer;
+}
+
+input.addPlace {
+    width: 200px;
+    font-size: 1em;
+    margin-top: 3%;
+    padding: 10px;
+    line-height: 20px;
 }
 
 button.button {

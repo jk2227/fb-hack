@@ -52,7 +52,7 @@
                         </table>
                     </div>
                     <form method = "POST">
-                    <input type = "submit" id = "sightseeingSubmission" name = "submit" value = "Continue"/>
+                    <input type = "submit" class = "addPlace" id = "sightseeingSubmission" name = "continue" value = "CONTINUE"/>
                     </form>
                 <?php if (isset($_POST["submit"])){
                         $DOM = new DOMDocument();
@@ -68,6 +68,14 @@
                         $_SESSION["places"] = $arr;
                     }
                 ?>
+                <?php 
+                if (isset($_POST["continue"])){
+                    echo'
+                        <script type="text/javascript">
+                            window.location = "itinerary.php";
+                        </script>';
+                }
+            ?>
             </div><!-- end main div -->
             <div id="clearboth"></div>
             <div id="bottom">

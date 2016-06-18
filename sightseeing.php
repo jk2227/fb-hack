@@ -55,13 +55,13 @@
                     </table>
                 </div>
                 <form method = "POST">
-                <input type = "submit" id = "sightseeingSubmission" name = "submit" value = "Continue" onclick = "ajax()"/>
+                <input type = "submit" class = "addPlace" id = "sightseeingSubmission" name = "continue" value = "CONTINUE"/>
                 </form>
                 <!-- <button onclick = "ajax()">Continue</button> -->
             <?php 
-            if (isset($_POST["submit"])){
-                echo "submitted";
-                echo $_SESSION["data"];
+            if (isset($_POST["continue"])){
+                //echo "submitted";
+                //echo $_SESSION["data"];
             //         $DOM = new DOMDocument();
             //         $DOM->loadHTML("sightseeing.php");
             //         $rows = $DOM->getElementsByTagName("tr");
@@ -73,6 +73,10 @@
             //             print($cols->item(0)->nodeValue);
             //         }
             //         $_SESSION["places"] = $arr;
+                echo'
+                            <script type="text/javascript">
+                                window.location = "eatery.php";
+                            </script>';
                 }
             ?>
 

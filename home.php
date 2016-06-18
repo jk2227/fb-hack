@@ -20,6 +20,9 @@
                             <div id="destination">
                                 <input class="destination_input" type="text" name="destination" placeholder="Where are you going?" >
                             </div>
+                            <div id="stay">
+                                <input class="destination_input" type="text" name="stay" placeholder="Where are you staying?" >
+                            </div>
                             <div class="date">
                                 <label for="startdate">Start Date:</label>
                                 <input class="inputbox" type="date" name="startdate">
@@ -47,6 +50,7 @@
                         $enddate = trim(filter_input(INPUT_POST, 'enddate', FILTER_SANITIZE_STRING));
                         $starttime = $_POST['starttime'];
                         $endtime = $_POST['endtime'];
+                        $stay = trim(filter_input(INPUT_POST, 'stay', FILTER_SANITIZE_STRING));
                         
                         
                         //form validation
@@ -80,6 +84,7 @@
                             $_SESSION["enddate"] = $enddate;
                             $_SESSION["starttime"] = $starttime;
                             $_SESSION["endtime"] = $endtime;
+                            $_SESSION["stay"] = $stay;
                             
                             echo'
                             <script type="text/javascript">
