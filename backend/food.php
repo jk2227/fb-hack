@@ -14,7 +14,7 @@ $TOKEN_SECRET = 'fbyTLjZF69W_FHz3NY5gcKyNOVo';
 
 
 $API_HOST = 'api.yelp.com';
-$DEFAULT_TERM = 'japanese food';
+$DEFAULT_TERM = 'food';
 $DEFAULT_LOCATION = 'Seattle, WA';
 $SEARCH_LIMIT = 20;
 $SEARCH_PATH = '/v2/search/';
