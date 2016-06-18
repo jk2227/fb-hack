@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+
 <html>
     <head>
         <meta charset="utf-8">
@@ -20,31 +20,41 @@
             </div><!-- End top div -->
             
             <div id="main">  
-            <!-- <form method = "POST">
-                <input type = "submit" name = "enter" value = "enter" onclick = "serializePlace()">
-            </form>     
-            <?php
 
-            // if (isset($_POST["enter"])){
-            //     echo $_SESSION["places"];
-            }
-            ?> -->
-
-            <form id = "finalResults">
+            <table id = "rec" class = "display">
                 <?php
-                    $file = fopen("files/output.json", "r");
+                    $file = fopen("backend/final.json", "r");
                     $lines = array();
                     while (!feof($file)){
                         $lines[] = fgets($file);
                     }
                     fclose($file);
 
-                    print $lines;
+                    $morning = array("9:45AM","9:45AM", "10:15AM", "10:00AM", "9:15AM");
+                    $noon = array("11:30AM","11:30AM", "12:00AM", "11:45AM", "12:15AM");
+                    $afternoon = array("2:00pm","2:00pm", "1:30pm", "2:30pm", "3:00pm");
+                    $evening = array("6:15pm", "6:15pm", "7:00pm", "6:00pm", "7:15pm");
+
+                    $json = json_decode ($lines[0]);
+                    $count = 1;
+                    foreach ($json as $day){
+                      
+                        echo "<tr><td>DAY ".$count."</td><td></td></tr>";
+                        echo "<tr><td>".$morning[$count]."</td><td>".$day->p1."</td></tr>";
+                        echo "<tr><td>".$noon[$count]."</td><td>Lunch at ".$day->lunch."</td></tr>";
+                        echo "<tr><td>".$afternoon[$count]."</td><td>".$day->p2."</td></tr>";
+                        echo "<tr><td>".$evening[$count]."</td><td>Dinner at ".$day->dinner."</td></tr>";
+                        echo "<tr><td></td><td></td></tr>";
+                        echo "<tr><td></td><td></td></tr>";
+                        echo "<tr><td></td><td></td></tr>";
+                        echo "<br>";
+                        $count ++;
+                    }
 
                 ?>
 
 
-            </form>
+            </table>
             </div><!-- end main div -->
             <div id="bottom">
                 <p>&copy; 2016 by Utinerary</p>
