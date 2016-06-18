@@ -5,17 +5,16 @@
 	"places":[
 		{
 			"name": "Space Needle",
-			"type": "sightseeing",
+			"type": "sightseeing"
 		},
 		{
 			"name": "Microsoft",
-			"type": "sightseeing",
+			"type": "sightseeing"
 		}
 	],
 	"food":[
 		{
 			"name": "Din Tai Fung"
-
 		}
 	]
 
