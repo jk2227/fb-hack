@@ -18,8 +18,7 @@ def searchByLocation(city):
 
 	response = client.search(city, **params)
 	bs = response.businesses
-	for b in bs:
-		print b.name
+	return bs[0].name
 
 # used to display recommended restaurants based on the 
 # customer's search
@@ -48,8 +47,10 @@ def searchNearbyRestaurants(loc):
 
 	response = client.search(loc, **params)
 	bs = response.businesses
-	for b in bs:
-		print b.name
+	# for b in bs:
+	# 	print b.name
+
+	return bs[0].name
 
 # def main():
 # 	# searchByLocation('Seattle')

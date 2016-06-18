@@ -6,6 +6,8 @@ class GoogleMapper:
   def __init__(self, directory):
       json_data = open(directory).read()
       json_loads = json.loads(json_data)
+      self.start = json_loads['start']
+      self.end = json_loads['end']
       self.places = json_loads['places']
       restaurantObjects = filter(lambda x : x['type'] == 'food', json_loads['places'])
       self.restaurants = [restaurant['name'] for restaurant in restaurantObjects]      
