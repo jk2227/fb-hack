@@ -18,8 +18,14 @@
             </div><!-- End top div -->
             
             <div id="main">
-
- 
+                <h1>Find things to do:</h1>
+                <div id = "category" class = "left">
+                    Something else
+                </div>
+                
+                <div id = "cart" class = "right">
+                    <h2>Cart</h2>
+                </div>
             </div><!-- end main div -->
             
             <div id="bottom">
