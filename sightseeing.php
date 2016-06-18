@@ -11,6 +11,7 @@
         <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/geocode/json?address=Seattle&key=AIzaSyA59zGWOtyvYAUhwxmnjwF3GZQoxcvynF8"></script> -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
         <script type="text/javascript" src="js/sightseeing.js"></script>
+        <script type="text/javascript" src="js/serializer.js"></script>
         <?php include "php/php_component.php";?>
         
     </head>
@@ -19,6 +20,7 @@
         <div id="frame">
         <script type='text/javascript'>
           var userDestination = "<?php echo $_SESSION['destination'] ?>"; //dont forget to place the PHP code block inside the quotation 
+          var userStart = "<?php echo $_SESSION['start'] ?>"
           // console.log(userDestination);
         </script>
             <div id="top">
