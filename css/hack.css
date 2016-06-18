@@ -228,6 +228,11 @@ table{
     text-align: left;
     
 }
+
+.finalResult{
+    text-align: left;
+    margin-left: 17%;
+}
 /*-----------bottom---------------*/
 #clearboth{
     clear: both;

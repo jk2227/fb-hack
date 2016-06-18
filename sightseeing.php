@@ -43,7 +43,6 @@
                         <button class = 'addPlace' onclick = 'addCurrent(this)' >Pike Place Market</button><br>
                         <button class = 'addPlace' onclick = 'addCurrent(this)' >Bellevue Square</button><br>
                         <button class = 'addPlace' onclick = 'addCurrent(this)' >PACCAR IMAX Theater</button><br>
-                        <button class = 'addPlace' onclick = 'addCurrent(this)' >Space Needle</button><br>
                         <button class = 'addPlace' onclick = 'addCurrent(this)' >Hyatt House Seattle/Bellevue</button><br>
                     </div>
                     </div>

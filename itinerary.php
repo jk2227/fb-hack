@@ -20,8 +20,8 @@
             </div><!-- End top div -->
             
             <div id="main">  
-
-            <table id = "rec" class = "display">
+                <table class = 'display finalResult'>
+            
                 <?php
                     $file = fopen("backend/final.json", "r");
                     $lines = array();
@@ -34,11 +34,11 @@
                     $noon = array("11:30AM","11:30AM", "12:00AM", "11:45AM", "12:15AM");
                     $afternoon = array("2:00pm","2:00pm", "1:30pm", "2:30pm", "3:00pm");
                     $evening = array("6:15pm", "6:15pm", "7:00pm", "6:00pm", "7:15pm");
-
+                    
                     $json = json_decode ($lines[0]);
                     $count = 1;
                     foreach ($json as $day){
-                      
+                        
                         echo "<tr><td>DAY ".$count."</td><td></td></tr>";
                         echo "<tr><td>".$morning[$count]."</td><td>".$day->p1."</td></tr>";
                         echo "<tr><td>".$noon[$count]."</td><td>Lunch at ".$day->lunch."</td></tr>";
@@ -47,14 +47,19 @@
                         echo "<tr><td></td><td></td></tr>";
                         echo "<tr><td></td><td></td></tr>";
                         echo "<tr><td></td><td></td></tr>";
-                        echo "<br>";
+                        echo "<tr><td></td><td></td></tr>";
+                        echo "<tr><td></td><td></td></tr>";
+                        echo "<tr><td></td><td></td></tr>";
+                        echo "<tr><td></td><td></td></tr>";
+                        echo "<tr><td></td><td></td></tr>";
+                        
                         $count ++;
                     }
 
                 ?>
 
-
-            </table>
+                </table>
+            
             </div><!-- end main div -->
             <div id="bottom">
                 <p>&copy; 2016 by Utinerary</p>
