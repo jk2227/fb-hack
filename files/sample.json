@@ -1,4 +1,5 @@
 {
+	"startLocation": "Hyatt House Bellevue",
 	"destination": "Seattle",
 	"start": "06/18/2016",
 	"end": "06/24/2016",
@@ -6,17 +7,14 @@
 		{
 			"name": "Space Needle",
 			"type": "sightseeing",
+			"duration": 2
 		},
 		{
 			"name": "Microsoft",
 			"type": "sightseeing",
+			"duration": 2
 		}
 	],
-	"food":[
-		{
-			"name": "Din Tai Fung"
-
-		}
-	]
+	"food":[ 1, 4, 7, 8 ]
 
 }

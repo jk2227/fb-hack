@@ -13,3 +13,13 @@ def getMonth(req,month):
 	req.write(calendar.month(2005, int(month),2,3))
 
 
+def createItinerary(start, matrix):
+	
+
+def main():
+	# searchByLocation('Seattle')
+	# searchByKeywords('Seattle', 'japanese food')
+	searchByLocation(47.6205,-122.3493)
+
+if __name__ == "__main__":
+	main()
