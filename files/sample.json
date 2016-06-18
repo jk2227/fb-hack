@@ -1,0 +1,22 @@
+{
+	"destination": "Seattle",
+	"start": "06/18/2016",
+	"end": "06/24/2016",
+	"places":[
+		{
+			"name": "Space Needle",
+			"type": "sightseeing",
+		},
+		{
+			"name": "Microsoft",
+			"type": "sightseeing",
+		}
+	],
+	"food":[
+		{
+			"name": "Din Tai Fung"
+
+		}
+	]
+
+}

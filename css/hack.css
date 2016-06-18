@@ -1,0 +1,79 @@
+/*-------------------------------------------------*/
+/*-----------style sheet for fb_hack---------------*/
+/*-------------------------------------------------*/
+
+body {
+	font-family: "Raleway", sans-serif;
+    padding: 0px;
+    margin: 0px auto;
+    background-color: #FFFFFF;
+}
+
+#frame {
+    margin: 0px auto;
+}
+
+#main {
+    min-height: 680px;
+    color: #FFFFFF;
+    margin: 0px;
+    text-align: center;
+}
+
+/*-----------home.php---------------*/
+
+#image {
+    background-image: url("../img/cover.jpg");
+    background-size: cover;
+    min-height: 750px;
+}
+
+#searchbox {
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 20%;
+    line-height: 40px;
+    color: #FFFFFF;
+}
+
+#destination {
+    padding: 1.5%;
+}
+
+#destination input[placeholder] {
+    font-size: 1.5em;
+}
+
+.destination_input {
+    width: 500px;
+    height: 50px;
+}
+
+
+#date input[type=date] {
+    width: 170px;
+    height: 2em;
+    
+}
+
+#submit {
+    padding: 1.5%;
+    
+}
+
+#submit input[type=submit]{
+    width: 500px;
+    height: 50px;
+    font-size: 5em;
+}
+
+/*-----------bottom---------------*/
+
+#bottom {
+    margin-top: -1.5%;
+    background-color: #403f41;
+    text-align: center;
+    padding: 0.5%;
+    color: #FFF;
+    line-height: 12px;
+}

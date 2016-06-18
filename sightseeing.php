@@ -1,10 +1,13 @@
+<?php session_start(); ?>
+
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Itinerary Generation</title>
+        <title>Utinerary</title>
         <!-- stylesheets -->
 		<link rel="stylesheet" type="text/css" href="css/hack.css">
 		<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA59zGWOtyvYAUhwxmnjwF3GZQoxcvynF8&libraries=places"></script>
         <?php include "php/php_component.php";?>
         
     </head>
@@ -12,23 +15,27 @@
     <body>
         <div id="frame">
             <div id="top">
+                display something
             </div><!-- End top div -->
             
             <div id="main">
-                <div id="description">
-                    <p>Placeholder: description of the city</p>
+                <h2>What are the places that you'd like to eat?</h2>
+                <div id = "category" class = "left">
+                    <div class = "navigation_bar">
+                        <ul>
+                            <li><a class = "selected" href = "food.php?id=0">Category</a></li>
+                            <li><a href = "food.php?id=1">Name</a></li>
+                        </ul>
+                    </div>
+                    <div>
                 </div>
-                
-                <div id="content">
-                    <p>Placeholder: Categories</p>
-                    <div id="cart">
-                        <p>Placeholder: Itinerary Cart</p>
-                    </div><!-- End cart div -->
-                </div><!-- End content div -->
+                <div id = "cart" class = "right">
+                </div>
  
             </div><!-- end main div -->
+            
             <div id="bottom">
-                <p>&copy; 2016 by Xin Lin, Yiting Wang, Ji hun Kim, Juhee Lee</p>
+                <p>&copy; 2016 by Utinerary</p>
             </div>
         </div><!-- end frame div -->
     </body>
