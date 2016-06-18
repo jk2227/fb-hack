@@ -25,7 +25,8 @@
           // console.log(userDestination);
         </script>
             <div id="top">
-                <h1>Utinerary: Make Your Itinerary</h1>
+                <h1>Utinerary - An Itinerary for U</h1>
+    
             </div><!-- End top div -->
             
             <div id="main">
@@ -53,10 +54,11 @@
                      <table id = "selectedPlaces">
                         <tr><td>Seleced Places</td><td>Duration</td><td> </td></tr>
                     </table>
-                </div>
+                
                 <form method = "POST">
                 <input type = "submit" class = "addPlace" id = "sightseeingSubmission" name = "continue" value = "CONTINUE"/>
                 </form>
+                </div>
                 <!-- <button onclick = "ajax()">Continue</button> -->
             <?php 
             if (isset($_POST["continue"])){
