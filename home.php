@@ -13,17 +13,17 @@
     
     <body>
         <div id="frame">
-            <div id="main">
+            <div id="home_main">
                 <div id="image">
                     <form method="POST">
                         <div id="searchbox">
                             <div id="destination">
-                                <input class="destination_input" type="text" name="destination" placeholder="Where Are You Going?" >
+                                <input class="destination_input" type="text" name="destination" placeholder="Where are you going?" >
                             </div>
                             <div class="date">
                                 <label for="startdate">Start Date:</label>
                                 <input class="inputbox" type="date" name="startdate">
-                                <label for="starttime">Start Time:</label>
+                                <label for="starttime"> Start Time:</label>
                                 <select name="starttime">
                                     <?php get_time_options(); ?>
                                 </select>
