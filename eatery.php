@@ -27,9 +27,10 @@
                         </div>
                     </form>
                     <div id = "rec">
-                        placeholder: read from recommendation input
                         <?php query_api("", "Seattle"); ?>
+                        
                     </div>
+                    <div id="clearboth"></div>
                 </div> <!-- end category div -->
                 <div id = "cart" class = "right">
                     <h3>CART</h3>
