@@ -118,7 +118,7 @@ function get_business($business_id) {
 function query_api($term, $location) {     
     $response = json_decode(search($term, $location));
 
-    for ($x = 0; $x <= 20; $x++) {
+    for ($x = 0; $x < 20; $x++) {
         print $response->businesses[$x]->name."\n";
     }
     // $business_id = $response->businesses[0]->id;
