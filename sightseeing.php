@@ -22,15 +22,17 @@
             </div><!-- End top div -->
             
             <div id="main">
-                <h2>What are places that you'd like to see?</h2>
+                <h1>Find things to do:</h1>
                 <div id = "category" class = "left">
-                    <input type="text" id = "ssingPoint" name="sightseeingPoints"/>
+                     <input type="text" id = "ssingPoint" name="sightseeingPoints"/>
                     <button onclick = "addPlace()">Add</button>
                     <div id = "sightseeingForm">
                     </div>
                 </div>
+                
                 <div id = "cart" class = "right">
-                    <table id = "selectedPlaces">
+                    <h2>Cart</h2>
+                     <table id = "selectedPlaces">
                         <tr><td>Seleced Places</td><td>Duration</td><td> </td></tr>
                     </table>
                 </div>

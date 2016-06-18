@@ -15,10 +15,12 @@ body {
 
 #main {
     min-height: 680px;
-    color: #FFFFFF;
     margin: 0px;
     text-align: center;
 }
+
+/*-------navigation-------*/
+
 
 /*-----------home.php---------------*/
 
@@ -31,7 +33,7 @@ body {
 #searchbox {
     margin: 0 auto;
     text-align: center;
-    padding-top: 20%;
+    padding-top: 15%;
     line-height: 40px;
     color: #FFFFFF;
 }
@@ -67,6 +69,7 @@ body {
     font-size: 5em;
 }
 
+
 .right{
     float: right;
     width: 40%;
@@ -76,6 +79,46 @@ body {
 
     float: left;
     width: 40% ;
+}
+/*-----------sightseeing.php---------------*/
+#category {
+    width: 80%;
+    /*position: fixed;*/
+    
+}
+
+#cart {
+    margin-left: 80%;
+    background-color: #D2D2D2;
+    height: auto;
+    width: 20%;
+    height: 100%;
+    
+}
+
+#food {
+    padding: 1.5%;
+    line-height: 50px;
+}
+
+#food input[placeholder]{
+    font-size: 1em;
+}
+
+.food_input {
+    width: 500px;
+    height: 50px;
+}
+
+input.button {
+    width: 100px;
+    font-size: 1em;
+    margin-left: 2%;
+    border: none;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 /*-----------bottom---------------*/

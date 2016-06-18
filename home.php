@@ -26,7 +26,7 @@
                                 <input class="inputbox" type="date" name="enddate">
                             </div>
                             <div id="submit">
-                                <input class="button" type="submit" name="submit" value="GO"/>
+                                <input type="submit" name="submit" value="GO"/>
                             </div>
                         </div><!-- End searchbox div -->
                 <?php 
