@@ -43,7 +43,7 @@ $(document).ready(function() {
 function callback(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
-    	$("#sightseeingForm").append("<button class = 'button' onclick = 'addCurrent(this)' >"+results[i].name+"</button><br>");
+    	$("#sightseeingForm").append("<button class = 'addPlace' onclick = 'addCurrent(this)' >"+results[i].name+"</button><br>");
       // console.log(results[i].name);
     }
   }
@@ -61,7 +61,7 @@ function addPlace(){
 
 function removeBtn(btn){
 	// console.log(btn.value);
-	$("#sightseeingForm").append("<button onclick = 'addCurrent(this)' >"+btn.value+"</button><br>");
+	$("#sightseeingForm").append("<button class = 'button' onclick = 'addCurrent(this)' >"+btn.value+"</button><br>");
 	// console.log(btn);
 	// console.log($(btn).parent());
 	// console.log($(btn).parent().parent());
@@ -83,7 +83,7 @@ function ajax(){
 		}
 	}
 	console.log(arr);
-	var data1 = {places: arr};
+	var data1 = {places: "arr"};
 	  searchResult = $.ajax({
 	    url: 'php/sightseeingAjax.php',
 	    method: 'POST',
