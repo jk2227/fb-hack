@@ -1,4 +1,4 @@
-#!/usr/bin/php
+<!--#!/usr/bin/php -->
 <?php
 
 // Enter the path that the oauth library is in relation to the php file
@@ -117,10 +117,20 @@ function get_business($business_id) {
  */
 function query_api($term, $location) {     
     $response = json_decode(search($term, $location));
-
+    print "<table class='display'><tr><th></th><th></th><th></th><th></th></tr><tbody>";
     for ($x = 0; $x < 20; $x++) {
-        print $response->businesses[$x]->name."<br>\n";
-    }
+        $url = $response->businesses[$x]->url;
+        print "<tr>";
+        print "<td><img src='".$response->businesses[$x]->image_url."' alt='temporary'></td>\n";
+        print "<td><a href='$url'>".$response->businesses[$x]->name."</a></td>\n";
+        print "<td><img src='".$response->businesses[$x]->rating_img_url."' alt='temporary'></td>\n";
+        print "<td> Rating: ".$response->businesses[$x]->rating."</td>\n";
+        print "</tr>";
+        // location
+        // phone
+        // rating_img_url
+    };
+    print "</tbody></table>";
     // $business_id = $response->businesses[0]->id;
     
     // print sprintf(

@@ -17,9 +17,19 @@ body {
     min-height: 680px;
     margin: 0px;
     text-align: center;
+
 }
 
 /*-------navigation-------*/
+
+#top {
+    background-color: #005580;
+    text-align: center;
+    padding: 0.5%;
+    color: #FFF;
+    line-height: 12px;
+    font-family: sans-serif;
+}
 
 
 /*-----------home.php---------------*/
@@ -52,7 +62,7 @@ body {
 }
 
 
-#date input[type=date] {
+.date input[type=date] {
     width: 170px;
     height: 2em;
     
@@ -83,16 +93,18 @@ body {
 /*-----------sightseeing.php---------------*/
 #category {
     width: 80%;
+    float:left;
+    height: auto;
+    padding-bottom: 5%;
+    padding-top: 30px;
     /*position: fixed;*/
-    
 }
 
 #cart {
-    margin-left: 80%;
+    float:right;
     background-color: #D2D2D2;
-    height: auto;
     width: 20%;
-    height: 100%;
+
     
 }
 
@@ -121,7 +133,35 @@ input.button {
     cursor: pointer;
 }
 
+#rec {
+    padding: 0 20%;
+    border: thin black;
+}
+
+table{
+    width: 100%;
+    padding-top: 5%;
+}
+
+.display {
+    text-align: center;
+}
+
+.display a{
+    color: #66534e;
+}
+
+.display table{
+    padding: 2%;
+}
+
+.row{
+    margin-bottom: 2%;
+}
 /*-----------bottom---------------*/
+#clearboth{
+    clear: both;
+}
 
 #bottom {
     margin-top: -1.5%;
