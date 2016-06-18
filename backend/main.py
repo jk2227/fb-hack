@@ -15,6 +15,9 @@ def getMonth(req,month):
 	req.write(calendar.month(2005, int(month),2,3))
 
 
+def getHour(time):
+
+
 def createItinerary(start, start_time, matrix):
 	# if 12 < start_time < 1:
 	# 	start at a restaurant
@@ -30,7 +33,9 @@ def createItinerary(start, start_time, matrix):
 
 
 def main():
-	
+	g = GoogleMapper('../files/sample.json')
+	matrix = g.generateMatrix()
+	createItinerary()
 
 if __name__ == "__main__":
 	main()
