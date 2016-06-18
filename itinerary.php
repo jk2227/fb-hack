@@ -5,6 +5,8 @@
         <!-- stylesheets -->
 		<link rel="stylesheet" type="text/css" href="css/hack.css">
 		<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+         <script type="text/javascript" src="js/hack.js"></script>
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
         <?php include "php/php_component.php";?>
         
     </head>
