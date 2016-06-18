@@ -5,28 +5,34 @@
         <!-- stylesheets -->
 		<link rel="stylesheet" type="text/css" href="css/hack.css">
 		<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-        <?php include "php/php_component.php";?>
+        <?php include "backend/food.php";?>
+        
         
     </head>
     
     <body>
         <div id="frame">
             <div id="top">
-                <h1>Food</h1>
             </div><!-- End top div -->
             
             <div id="main">
-                <h2>What are the places that you'd like to eat?</h2>
                 <div id = "category" class = "left">
-                    <div class = "navigation_bar">
-                        <ul>
-                            <li><a class = "selected" href = "food.php?id=0">Category</a></li>
-                            <li><a href = "food.php?id=1">Name</a></li>
-                        </ul>
+                    <h2>What are the places that you'd like to eat?</h2>
+                    <form method="POST">
+                        <div id="search">
+                            <div id="food">
+                                <input class="food_input" type="text" name="destination" placeholder="Type a category. e.g., Japanese" >
+                                <input class="button" type="submit" name="search" value="SEARCH"/>
+                            </div>
+                        </div>
+                    </form>
+                    <div id = "rec">
+                        placeholder: read from recommendation input
+                        <?php query_api("", "Seattle"); ?>
                     </div>
-                    <div>
-                </div>
+                </div> <!-- end category div -->
                 <div id = "cart" class = "right">
+                    <h3>CART</h3>
                 </div>
             </div><!-- end main div -->
             <div id="bottom">
