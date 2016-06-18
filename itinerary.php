@@ -8,6 +8,7 @@
 		<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
          <script type="text/javascript" src="js/hack.js"></script>
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+         <script type="text/javascript" src="js/serializer.js"></script>
         <?php include "php/php_component.php";?>
         
     </head>
@@ -19,15 +20,31 @@
             </div><!-- End top div -->
             
             <div id="main">  
-            <form method = "POST">
-                <input type = "submit" name = "enter" value = "enter">
+            <!-- <form method = "POST">
+                <input type = "submit" name = "enter" value = "enter" onclick = "serializePlace()">
             </form>     
             <?php
 
-            if (isset($_POST["enter"])){
-                echo $_SESSION["places"];
+            // if (isset($_POST["enter"])){
+            //     echo $_SESSION["places"];
             }
-            ?>
+            ?> -->
+
+            <form id = "finalResults">
+                <?php
+                    $file = fopen("files/output.json", "r");
+                    $lines = array();
+                    while (!feof($file)){
+                        $lines[] = fgets($file);
+                    }
+                    fclose($file);
+
+                    print $lines;
+
+                ?>
+
+
+            </form>
             </div><!-- end main div -->
             <div id="bottom">
                 <p>&copy; 2016 by Utinerary</p>

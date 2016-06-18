@@ -20,7 +20,8 @@
         <div id="frame">
         <script type='text/javascript'>
           var userDestination = "<?php echo $_SESSION['destination'] ?>"; //dont forget to place the PHP code block inside the quotation 
-          var userStart = "<?php echo $_SESSION['start'] ?>"
+          var userStart = "<?php echo $_SESSION['startdate'] ?>";
+          var userEnd = "<?php echo $_SESSION['enddate']?>";
           // console.log(userDestination);
         </script>
             <div id="top">
