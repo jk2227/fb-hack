@@ -19,7 +19,7 @@
         <div id="frame">
         <script type='text/javascript'>
           var userDestination = "<?php echo $_SESSION['destination'] ?>"; //dont forget to place the PHP code block inside the quotation 
-          console.log(userDestination);
+          // console.log(userDestination);
         </script>
             <div id="top">
                 <h1>Utinerary: Make Your Itinerary</h1>
@@ -45,20 +45,24 @@
                     </table>
                 </div>
                 <form method = "POST">
-                <input type = "submit" id = "sightseeingSubmission" name = "submit" value = "Continue"/>
+                <input type = "submit" id = "sightseeingSubmission" name = "submit" value = "Continue" onclick = "ajax()"/>
                 </form>
-            <?php if (isset($_POST["submit"])){
-                    $DOM = new DOMDocument();
-                    $DOM->loadHTML("sightseeing.php");
-                    $rows = $DOM->getElementsByTagName("tr");
-                    $arr = array();
-                    print($rows->length);
-                    for ($i = 0; $i < $rows->length; $i++) {
-                        $cols = $rows->item($i)->getElementsbyTagName("td");
-                        $arr[] = $cols->item(0)->nodeValue;
-                        print($cols->item(0)->nodeValue);
-                    }
-                    $_SESSION["places"] = $arr;
+                <!-- <button onclick = "ajax()">Continue</button> -->
+            <?php 
+            if (isset($_POST["submit"])){
+                echo "submitted";
+                echo $_SESSION["data"];
+            //         $DOM = new DOMDocument();
+            //         $DOM->loadHTML("sightseeing.php");
+            //         $rows = $DOM->getElementsByTagName("tr");
+            //         $arr = array();
+            //         print($rows->length);
+            //         for ($i = 0; $i < $rows->length; $i++) {
+            //             $cols = $rows->item($i)->getElementsbyTagName("td");
+            //             $arr[] = $cols->item(0)->nodeValue;
+            //             print($cols->item(0)->nodeValue);
+            //         }
+            //         $_SESSION["places"] = $arr;
                 }
             ?>
 
