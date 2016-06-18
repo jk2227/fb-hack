@@ -22,15 +22,19 @@
           console.log(userDestination);
         </script>
             <div id="top">
-                <h1>Sightseeing</h1>
+                <h1>Utinerary: Make Your Itinerary</h1>
             </div><!-- End top div -->
             
             <div id="main">
-                <h1>Find things to do:</h1>
                 <div id = "category" class = "left">
-                     <input type="text" id = "ssingPoint" name="sightseeingPoints"/>
-                    <button onclick = "addPlace()">Add</button>
+                    <h2>Find things to do:</h2>
+                    <div id="search">
+                        <div id="food">
+                            <input type="text" id = "ssingPoint" class="food_input" placeholder="Type an attraction or an acitivity, e.g., Space Needle." name="sightseeingPoints"/>
+                            <button class="button" onclick = "addPlace()">Add</button>
+                        </div>
                     <div id = "sightseeingForm">
+                    </div>
                     </div>
                 </div>
                 
@@ -59,6 +63,7 @@
             ?>
 
             </div><!-- end main div -->
+            <div id="clearboth"></div>
             <div id="map"></div>
             
             <div id="bottom">
