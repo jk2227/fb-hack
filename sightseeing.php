@@ -17,6 +17,10 @@
     
     <body>
         <div id="frame">
+        <script type='text/javascript'>
+          var userDestination = "<?php echo $_SESSION['destination'] ?>"; //dont forget to place the PHP code block inside the quotation 
+          console.log(userDestination);
+        </script>
             <div id="top">
                 <h1>Sightseeing</h1>
             </div><!-- End top div -->
@@ -36,8 +40,24 @@
                         <tr><td>Seleced Places</td><td>Duration</td><td> </td></tr>
                     </table>
                 </div>
-                <button id = "sightseeingSubmission">Continue</button>
- 
+                <form method = "POST">
+                <input type = "submit" id = "sightseeingSubmission" name = "submit" value = "Continue"/>
+                </form>
+            <?php if (isset($_POST["submit"])){
+                    $DOM = new DOMDocument();
+                    $DOM->loadHTML("sightseeing.php");
+                    $rows = $DOM->getElementsByTagName("tr");
+                    $arr = array();
+                    print($rows->length);
+                    for ($i = 0; $i < $rows->length; $i++) {
+                        $cols = $rows->item($i)->getElementsbyTagName("td");
+                        $arr[] = $cols->item(0)->nodeValue;
+                        print($cols->item(0)->nodeValue);
+                    }
+                    $_SESSION["places"] = $arr;
+                }
+            ?>
+
             </div><!-- end main div -->
             <div id="map"></div>
             
