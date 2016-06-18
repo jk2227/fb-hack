@@ -34,6 +34,7 @@
                             <button class="button" onclick = "addPlace()">Add</button>
                         </div>
                     <div id = "sightseeingForm">
+                        <h3>Click to add an attraction to your itinerary.</h3>
                     </div>
                     </div>
                 </div>

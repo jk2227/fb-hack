@@ -115,8 +115,6 @@ body {
     float:right;
     background-color: #D2D2D2;
     width: 20%;
-
-    
 }
 
 #food {
@@ -163,6 +161,15 @@ button.add {
     width: 80px;
     font-size: 1em;
 }
+
+button.addPlace {
+    width: 400px;
+    font-size: 1em;
+    margin-top: 3%;
+    padding: 10px;
+    line-height: 20px;
+}
+
 #rec {
     padding: 0 20%;
     border: thin black;
