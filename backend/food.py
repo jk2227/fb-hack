@@ -38,22 +38,23 @@ def searchByKeywords(city, keywords):
 		# print b.location
 		# print b.phone
 
-def searchByLocation(latitude, longitude):
+def searchNearbyRestaurants(loc):
 
 	params = {
 		'term': 'restaurants',
-		'radius_filter': 2000
+		'radius_filter': 1000,
+		'limit': 1
 	}
 
-	response = client.search_by_coordinates(latitude, longitude, **params)
+	response = client.search(loc, **params)
 	bs = response.businesses
 	for b in bs:
 		print b.name
 
-def main():
-	# searchByLocation('Seattle')
-	# searchByKeywords('Seattle', 'japanese food')
-	searchByLocation(47.6205,-122.3493)
+# def main():
+# 	# searchByLocation('Seattle')
+# 	# searchByKeywords('Seattle', 'japanese food')
+# 	# searchByLocation(47.6205,-122.3493)
 
-if __name__ == "__main__":
-	main()
+# if __name__ == "__main__":
+# 	main()
