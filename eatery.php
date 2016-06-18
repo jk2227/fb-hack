@@ -21,7 +21,7 @@
             
             <div id="main">
                 <div id = "category" class = "left">
-                    <h2>What are the places that you'd like to eat?</h2>
+                    <h2>What are the places that you'd like to eat at?</h2>
                     <form method="POST">
                         <div id="search">
                             <div id="food">
@@ -50,10 +50,11 @@
                         <table id = "selectedPlaces">
                             <tr><td>Seleced Places</td><td>Duration</td><td> </td></tr>
                         </table>
-                    </div>
+    
                     <form method = "POST">
                     <input type = "submit" class = "addPlace" id = "sightseeingSubmission" name = "continue" value = "CONTINUE"/>
                     </form>
+                </div>
                 <?php if (isset($_POST["submit"])){
                         $DOM = new DOMDocument();
                         $DOM->loadHTML("eatery.php");
