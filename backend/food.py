@@ -42,7 +42,8 @@ def searchNearbyRestaurants(loc):
 
 	params = {
 		'term': 'restaurants',
-		'radius_filter': 2000
+		'radius_filter': 1000,
+		'limit': 1
 	}
 
 	response = client.search(loc, **params)
@@ -50,10 +51,10 @@ def searchNearbyRestaurants(loc):
 	for b in bs:
 		print b.name
 
-def main():
-	# searchByLocation('Seattle')
-	# searchByKeywords('Seattle', 'japanese food')
-	# searchByLocation(47.6205,-122.3493)
+# def main():
+# 	# searchByLocation('Seattle')
+# 	# searchByKeywords('Seattle', 'japanese food')
+# 	# searchByLocation(47.6205,-122.3493)
 
-if __name__ == "__main__":
-	main()
+# if __name__ == "__main__":
+# 	main()

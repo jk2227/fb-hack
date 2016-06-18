@@ -26,8 +26,11 @@ class GoogleMapper:
           return None
       else:
           latlong = result['results'][0]['geometry']['location']
+          if place in self.restaurants: 
+            self.restaurants = [x if x != place else result['results'][0]['name'] for x in self.restaurants]
           if place == self.startLocation:
             self.startLocation = result['results'][0]['name']
+
           return (result['results'][0]['name'], (latlong['lat'], latlong['lng']))
 
   def generateMatrix(self):

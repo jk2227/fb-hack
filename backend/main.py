@@ -13,6 +13,7 @@ from collections import deque
 from maps import GoogleMapper
 import copy
 import operator
+import food
 
 def getMonth(req,month): 
 	req.write(calendar.month(2005, int(month),2,3))
@@ -59,7 +60,7 @@ end_date = '06/18/16'
 start_time = '12:00'
 end_time = '8:00'
 
-def createItinerary(start_loc, start_date, end_date, start_time, end_time, matrix):
+def createItinerary(start_loc, start_date, end_date, start_time, end_time, pairs, matrix):
 	places = matrix[start].keys()
 	
 	currLoc = start_loc
@@ -110,16 +111,19 @@ def matchRestaurantsWithPlaces(restaurants, etc, matrix):
 			if pref[0] not in pairs:
 				pairs[pref[0]] = unmatchedRestaurant
 				unmatchedEtcs.remove(pref[0])
+				break
 			elif (pref[0] in pairs):
-				if (matrix[pref[0]][pair[pref[0]]] > matrix[pref[0]][unmatchedRestaurant]):
+				if (matrix[pref[0]][pairs[pref[0]]] > matrix[pref[0]][unmatchedRestaurant]):
 					unmatchedRestaurants.push(pairs[pref[0]])                
 					pairs[pref[0]] = unmatchedRestaurant
+					break
 	
 	if len(unmatchedEtcs) > 0: 
 		for unmatchedEtc in unmatchedEtcs:
 			# find closest restaurant and do pairs[restaurant] = unmatchedEtc 
 			# if conflict then put closer one in pairs and put the other one in unmatched Etcs 
-			print ''
+			nearRestaurant = food.searchNearbyRestaurants(unmatchedEtc)
+			pairs[unmatchedEtc] = nearRestaurant
 	
 	return pairs
 		
@@ -132,8 +136,10 @@ def main():
 	locationNames = matrix[g.startLocation].keys()
 	restaurants = g.restaurants
 	etc = [item for item in locationNames if item not in restaurants]
-
-	# createItinerary()
+	pairs = matchRestaurantsWithPlaces(restaurants, etc, matrix)
+	print pairs
+	itineraryJson = createItinerary(g.startLocation, g.start, g.end, None, None, pairs, matrix)
+	
 
 if __name__ == "__main__":
 	main()
