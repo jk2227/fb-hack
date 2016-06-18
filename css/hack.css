@@ -69,19 +69,30 @@ body {
     font-size: 5em;
 }
 
+
+.right{
+    float: right;
+    width: 40%;
+} 
+
+.left{
+
+    float: left;
+    width: 40% ;
+}
 /*-----------sightseeing.php---------------*/
 #category {
     width: 80%;
-    position: fixed;
-    
+    float:left;
+    height: auto;
+    /*position: fixed;*/
 }
 
 #cart {
-    margin-left: 80%;
+    float:right;
     background-color: #D2D2D2;
-    height: auto;
     width: 20%;
-    height: 100%;
+
     
 }
 
@@ -110,7 +121,13 @@ input.button {
     cursor: pointer;
 }
 
+#rec {
+    padding-left: 30%;
+}
 /*-----------bottom---------------*/
+#clearboth{
+    clear: both;
+}
 
 #bottom {
     margin-top: -1.5%;
