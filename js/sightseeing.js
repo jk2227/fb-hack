@@ -61,7 +61,7 @@ function addPlace(){
 
 function removeBtn(btn){
 	// console.log(btn.value);
-	$("#sightseeingForm").append("<button class = 'button' onclick = 'addCurrent(this)' >"+btn.value+"</button><br>");
+	$("#sightseeingForm").append("<button class = 'addPlace' onclick = 'addCurrent(this)' >"+btn.value+"</button><br>");
 	// console.log(btn);
 	// console.log($(btn).parent());
 	// console.log($(btn).parent().parent());
