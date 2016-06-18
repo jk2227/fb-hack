@@ -6,6 +6,8 @@
         <!-- stylesheets -->
 		<link rel="stylesheet" type="text/css" href="css/hack.css">
 		<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script type="text/javascript" src="js/eatery.js"></script>
         <?php include "backend/food.php";?>
         
         
@@ -45,7 +47,27 @@
                 </div> <!-- end category div -->
                 <div id = "cart" class = "right">
                     <h3>CART</h3>
-                </div>
+                        <table id = "selectedPlaces">
+                            <tr><td>Seleced Places</td><td>Duration</td><td> </td></tr>
+                        </table>
+                    </div>
+                    <form method = "POST">
+                    <input type = "submit" id = "sightseeingSubmission" name = "submit" value = "Continue"/>
+                    </form>
+                <?php if (isset($_POST["submit"])){
+                        $DOM = new DOMDocument();
+                        $DOM->loadHTML("eatery.php");
+                        $rows = $DOM->getElementsByTagName("tr");
+                        $arr = array();
+                        print($rows->length);
+                        for ($i = 0; $i < $rows->length; $i++) {
+                            $cols = $rows->item($i)->getElementsbyTagName("td");
+                            $arr[] = $cols->item(0)->nodeValue;
+                            print($cols->item(0)->nodeValue);
+                        }
+                        $_SESSION["places"] = $arr;
+                    }
+                ?>
             </div><!-- end main div -->
             <div id="clearboth"></div>
             <div id="bottom">
