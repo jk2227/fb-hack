@@ -15,6 +15,7 @@ import copy
 import operator
 import food
 from datetime import datetime
+import json
 
 def getMonth(req,month): 
 	req.write(calendar.month(2005, int(month),2,3))
@@ -101,7 +102,7 @@ def createItinerary(start_loc, start_date, end_date, start_time, end_time, pairs
 			day['dinner'] = pairs[day['p2']]
 		else:
 			day['p2'] = ''
-			day['dinner'] = ''
+			day['dinner'] = food.searchByLocation(start_loc)
 
 	return days
 
@@ -147,8 +148,8 @@ def matchRestaurantsWithPlaces(restaurants, etc, matrix):
 
 def main():
 	g = GoogleMapper('../files/sample.json')
-	# matrix = g.generateMatrix()
-	matrix = {u'Japonessa': {u'Japonessa': 0, u'Space Needle': 1964, u'Tacos Chukis': 2360, u'Microsoft Office - Houston': 3636861, u'Hyatt House Seattle/Bellevue': 16020}, u'Space Needle': {u'Japonessa': 1929, u'Space Needle': 0, u'Tacos Chukis': 2375, u'Microsoft Office - Houston': 3638172, u'Hyatt House Seattle/Bellevue': 17331}, u'Tacos Chukis': {u'Japonessa': 2397, u'Space Needle': 2395, u'Tacos Chukis': 0, u'Microsoft Office - Houston': 3638153, u'Hyatt House Seattle/Bellevue': 17312}, u'Microsoft Office - Houston': {u'Japonessa': 3653624, u'Space Needle': 3655733, u'Tacos Chukis': 3653463, u'Microsoft Office - Houston': 0, u'Hyatt House Seattle/Bellevue': 3637122}, u'Hyatt House Seattle/Bellevue': {u'Japonessa': 16858, u'Space Needle': 18967, u'Tacos Chukis': 16697, u'Microsoft Office - Houston': 3621744, u'Hyatt House Seattle/Bellevue': 0}}
+	matrix = g.generateMatrix()
+	# matrix = {u'Japonessa': {u'Japonessa': 0, u'Space Needle': 1964, u'Tacos Chukis': 2360, u'Microsoft Office - Houston': 3636861, u'Hyatt House Seattle/Bellevue': 16020}, u'Space Needle': {u'Japonessa': 1929, u'Space Needle': 0, u'Tacos Chukis': 2375, u'Microsoft Office - Houston': 3638172, u'Hyatt House Seattle/Bellevue': 17331}, u'Tacos Chukis': {u'Japonessa': 2397, u'Space Needle': 2395, u'Tacos Chukis': 0, u'Microsoft Office - Houston': 3638153, u'Hyatt House Seattle/Bellevue': 17312}, u'Microsoft Office - Houston': {u'Japonessa': 3653624, u'Space Needle': 3655733, u'Tacos Chukis': 3653463, u'Microsoft Office - Houston': 0, u'Hyatt House Seattle/Bellevue': 3637122}, u'Hyatt House Seattle/Bellevue': {u'Japonessa': 16858, u'Space Needle': 18967, u'Tacos Chukis': 16697, u'Microsoft Office - Houston': 3621744, u'Hyatt House Seattle/Bellevue': 0}}
 	print matrix
 
 	locationNames = matrix[g.startLocation].keys()
@@ -159,6 +160,8 @@ def main():
 	itineraryJson = createItinerary(g.startLocation, g.start, g.end, None, None, pairs, matrix, etc)
 	print itineraryJson
 	# QUESTION FOR YITING: is g.startLocation the same as the google map one?
+	with open('final.json', 'w') as outputfile:
+		json.dump(itineraryJson, outputfile)
 
 if __name__ == "__main__":
 	main()

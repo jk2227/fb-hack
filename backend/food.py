@@ -1,5 +1,7 @@
 from yelp.client import Client
 from yelp.oauth1_authenticator import Oauth1Authenticator
+import random
+
 
 auth = Oauth1Authenticator(
 	consumer_key='nI2ym2HtMeUiqok8F5UfsA',
@@ -18,7 +20,8 @@ def searchByLocation(city):
 
 	response = client.search(city, **params)
 	bs = response.businesses
-	return bs[0].name
+	index = random.randint(0,10)
+	return bs[index].name
 
 # used to display recommended restaurants based on the 
 # customer's search
