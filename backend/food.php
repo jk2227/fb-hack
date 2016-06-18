@@ -138,16 +138,16 @@ function query_api($term, $location) {
 /**
  * User input is handled here 
  */
-$longopts  = array(
-    "term::",
-    "location::",
-);
+// $longopts  = array(
+//     "term::",
+//     "location::",
+// );
     
-$options = getopt("", $longopts);
+// $options = getopt("", $longopts);
 
-$term = $options['term'] ?: '';
-$location = $options['location'] ?: '';
+// $term = $options['term'] ?: '';
+// $location = $options['location'] ?: '';
 
-query_api($term, $location);
+// query_api($term, $location);
 
 ?>
