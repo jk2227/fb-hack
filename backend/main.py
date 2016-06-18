@@ -18,7 +18,7 @@ def getMonth(req,month):
 def getHour(time):
 
 
-def createItinerary(start, start_time, matrix):
+def createItinerary(start, start_time, end_time, matrix):
 	# if 12 < start_time < 1:
 	# 	start at a restaurant
 	# if 6 < start_time < 7:
@@ -29,7 +29,12 @@ def createItinerary(start, start_time, matrix):
 	travel_times = matrix[start]
 	closest_neighbor = min(travel_times, key=travel_times.get)
 
-	
+
+	# schedule sight seeing route
+
+	# allocate restaurants to the nearest sight seeing places
+	# and for the left over meals, find closest restaurants
+	# to the leftover sight seeing places
 
 
 def main():
