@@ -83,7 +83,7 @@
                             
                             echo'
                             <script type="text/javascript">
-                                window.location = "eatery.php";
+                                window.location = "sightseeing.php";
                             </script>';
                         }
                         

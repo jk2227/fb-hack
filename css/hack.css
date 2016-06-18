@@ -115,8 +115,6 @@ body {
     float:right;
     background-color: #D2D2D2;
     width: 20%;
-
-    
 }
 
 #food {
@@ -125,6 +123,10 @@ body {
 }
 
 #food input[placeholder]{
+    font-size: 1em;
+}
+
+#food button[placeholder] {
     font-size: 1em;
 }
 
@@ -142,6 +144,30 @@ input.button {
     text-align: center;
     text-decoration: none;
     cursor: pointer;
+}
+
+button.button {
+    width: 100px;
+    font-size: 1em;
+    margin-left: 2%;
+    border: none;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button.add {
+    width: 80px;
+    font-size: 1em;
+}
+
+button.addPlace {
+    width: 400px;
+    font-size: 1em;
+    margin-top: 3%;
+    padding: 10px;
+    line-height: 20px;
 }
 
 #rec {

@@ -19,18 +19,23 @@
         <div id="frame">
         <script type='text/javascript'>
           var userDestination = "<?php echo $_SESSION['destination'] ?>"; //dont forget to place the PHP code block inside the quotation 
-          console.log(userDestination);
+          // console.log(userDestination);
         </script>
             <div id="top">
-                <h1>Sightseeing</h1>
+                <h1>Utinerary: Make Your Itinerary</h1>
             </div><!-- End top div -->
             
             <div id="main">
-                <h1>Find things to do:</h1>
                 <div id = "category" class = "left">
-                     <input type="text" id = "ssingPoint" name="sightseeingPoints"/>
-                    <button onclick = "addPlace()">Add</button>
+                    <h2>Find things to do:</h2>
+                    <div id="search">
+                        <div id="food">
+                            <input type="text" id = "ssingPoint" class="food_input" placeholder="Type an attraction or an acitivity, e.g., Space Needle." name="sightseeingPoints"/>
+                            <button class="button" onclick = "addPlace()">Add</button>
+                        </div>
                     <div id = "sightseeingForm">
+                        <h3>Click to add an attraction to your itinerary.</h3>
+                    </div>
                     </div>
                 </div>
                 
@@ -41,24 +46,29 @@
                     </table>
                 </div>
                 <form method = "POST">
-                <input type = "submit" id = "sightseeingSubmission" name = "submit" value = "Continue"/>
+                <input type = "submit" id = "sightseeingSubmission" name = "submit" value = "Continue" onclick = "ajax()"/>
                 </form>
-            <?php if (isset($_POST["submit"])){
-                    $DOM = new DOMDocument();
-                    $DOM->loadHTML("sightseeing.php");
-                    $rows = $DOM->getElementsByTagName("tr");
-                    $arr = array();
-                    print($rows->length);
-                    for ($i = 0; $i < $rows->length; $i++) {
-                        $cols = $rows->item($i)->getElementsbyTagName("td");
-                        $arr[] = $cols->item(0)->nodeValue;
-                        print($cols->item(0)->nodeValue);
-                    }
-                    $_SESSION["places"] = $arr;
+                <!-- <button onclick = "ajax()">Continue</button> -->
+            <?php 
+            if (isset($_POST["submit"])){
+                echo "submitted";
+                echo $_SESSION["data"];
+            //         $DOM = new DOMDocument();
+            //         $DOM->loadHTML("sightseeing.php");
+            //         $rows = $DOM->getElementsByTagName("tr");
+            //         $arr = array();
+            //         print($rows->length);
+            //         for ($i = 0; $i < $rows->length; $i++) {
+            //             $cols = $rows->item($i)->getElementsbyTagName("td");
+            //             $arr[] = $cols->item(0)->nodeValue;
+            //             print($cols->item(0)->nodeValue);
+            //         }
+            //         $_SESSION["places"] = $arr;
                 }
             ?>
 
             </div><!-- end main div -->
+            <div id="clearboth"></div>
             <div id="map"></div>
             
             <div id="bottom">
